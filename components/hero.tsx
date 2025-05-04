@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
 import TypewriterComponent from "typewriter-effect"
 
 export default function Hero() {
@@ -72,7 +72,7 @@ export default function Hero() {
 
           <div className="flex justify-center space-x-4 mb-8">
             <motion.a
-              href="https://github.com/riddhi-more/"
+              href="https://github.com/riddhi-more"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -5 }}
@@ -81,7 +81,7 @@ export default function Hero() {
               <Github size={20} />
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/in/riddhimor/"
+              href="https://www.linkedin.com/in/riddhimor"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -5 }}
@@ -90,13 +90,11 @@ export default function Hero() {
               <Linkedin size={20} />
             </motion.a>
             <motion.a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:riddhimore2021@gmail.com"
               whileHover={{ y: -5 }}
               className="bg-gray-800 p-3 rounded-full text-white hover:bg-gray-700 transition-colors"
             >
-              <Twitter size={20} />
+              <Mail size={20} />
             </motion.a>
           </div>
 

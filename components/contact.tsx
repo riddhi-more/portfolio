@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { Github, Mail, Send, Linkedin } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -65,6 +65,14 @@ export default function Contact() {
               roles, innovative projects, or how I can contribute to your team&apos;s success.
             </p>
 
+            <div className="bg-purple-500/10 p-4 rounded-lg mb-8 border border-purple-500/20">
+              <h4 className="text-white font-medium mb-2">Open to Opportunities</h4>
+              <p className="text-gray-300">
+                I'm currently open to roles in Software Development, Cloud Engineering, or Agile Leadership. Feel free
+                to reach out to discuss how I can contribute to your team's success.
+              </p>
+            </div>
+
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="bg-purple-500/10 p-3 rounded-full mr-4">
@@ -72,27 +80,46 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium">Email</h4>
-                  <p className="text-gray-400">riddhimore2021@gmail.com</p>
+                  <a
+                    href="mailto:riddhimore2021@gmail.com"
+                    className="text-gray-400 hover:text-purple-400 transition-colors"
+                  >
+                    riddhimore2021@gmail.com
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-start">
                 <div className="bg-purple-500/10 p-3 rounded-full mr-4">
-                  <Phone className="h-6 w-6 text-purple-500" />
+                  <Linkedin className="h-6 w-6 text-purple-500" />
                 </div>
                 <div>
                   <h4 className="text-white font-medium">LinkedIn</h4>
-                  <p className="text-gray-400">linkedin.com/in/riddhimor</p>
+                  <a
+                    href="https://www.linkedin.com/in/riddhimor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-purple-400 transition-colors"
+                  >
+                    linkedin.com/in/riddhimor
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-start">
                 <div className="bg-purple-500/10 p-3 rounded-full mr-4">
-                  <MapPin className="h-6 w-6 text-purple-500" />
+                  <Github className="h-6 w-6 text-purple-500" />
                 </div>
                 <div>
-                  <h4 className="text-white font-medium">Location</h4>
-                  <p className="text-gray-400">London, United Kingdom</p>
+                  <h4 className="text-white font-medium">GitHub</h4>
+                  <a
+                    href="https://github.com/riddhi-more"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-purple-400 transition-colors"
+                  >
+                    github.com/riddhi-more
+                  </a>
                 </div>
               </div>
             </div>

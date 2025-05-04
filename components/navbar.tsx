@@ -19,11 +19,11 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/#home" },
+    { name: "About", href: "/#about" },
+    { name: "Skills", href: "/#skills" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Contact", href: "/#contact" },
     { name: "Resume", href: "/resume" },
   ]
 
@@ -34,7 +34,7 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="#home" className="text-2xl font-bold text-white">
+        <Link href="/#home" className="text-2xl font-bold text-white">
           <span className="text-purple-500">Port</span>folio
         </Link>
 

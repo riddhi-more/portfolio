@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Award, BookOpen, Briefcase, Calendar, Download, GraduationCap, MapPin, User } from "lucide-react"
+import { Award, BookOpen, Briefcase, Calendar, GraduationCap, MapPin, Printer, User } from "lucide-react"
 
 export default function ResumeContent() {
   return (
@@ -21,10 +21,8 @@ export default function ResumeContent() {
           <h1 className="text-3xl md:text-4xl font-bold text-white">
             Professional <span className="text-purple-500">Resume</span>
           </h1>
-          <Button className="bg-purple-600 hover:bg-purple-700 md:self-end" asChild>
-            <a href="/resume?print=true" target="_blank" rel="noreferrer">
-              <Download className="mr-2 h-4 w-4" /> Download PDF
-            </a>
+          <Button className="bg-purple-600 hover:bg-purple-700 md:self-end" onClick={() => window.print()}>
+            <Printer className="mr-2 h-4 w-4" /> Print Resume
           </Button>
         </div>
         <p className="text-gray-400 mb-6">

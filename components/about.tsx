@@ -87,10 +87,12 @@ export default function About() {
                   <Download className="mr-2 h-4 w-4" /> View Full Resume
                 </a>
               </Button>
-              <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-500/10" asChild>
-                <a href="/resume?print=true" target="_blank" rel="noreferrer">
-                  <Download className="mr-2 h-4 w-4" /> Download PDF
-                </a>
+              <Button
+                variant="outline"
+                className="border-purple-500 text-purple-500 hover:bg-purple-500/10"
+                onClick={() => window.print()}
+              >
+                <Download className="mr-2 h-4 w-4" /> Download Resume
               </Button>
             </div>
           </motion.div>

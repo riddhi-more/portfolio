@@ -1,7 +1,7 @@
 "use client"
 
+import { ArrowLeft, Printer } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Download, Printer } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function ResumeSidebar() {
@@ -73,13 +73,13 @@ export default function ResumeSidebar() {
           ))}
         </div>
         <div className="space-y-3">
-          <Button className="w-full bg-purple-600 hover:bg-purple-700" asChild>
-            <a href="/resume?print=true" target="_blank" rel="noreferrer">
-              <Download className="mr-2 h-4 w-4" /> Download PDF
-            </a>
-          </Button>
-          <Button variant="outline" className="w-full" onClick={handlePrint}>
+          <Button className="w-full bg-purple-600 hover:bg-purple-700" onClick={handlePrint}>
             <Printer className="mr-2 h-4 w-4" /> Print Resume
+          </Button>
+          <Button variant="outline" className="w-full" asChild>
+            <a href="/#home">
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Portfolio
+            </a>
           </Button>
         </div>
       </div>
