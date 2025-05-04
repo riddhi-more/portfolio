@@ -1,0 +1,62 @@
+@media print {
+  /* Hide navigation elements */
+  header,
+  footer,
+  nav,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Reset background colors for printing */
+  body,
+  main,
+  div,
+  section {
+    background: white !important;
+    color: black !important;
+  }
+
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: Arial, sans-serif !important;
+  }
+
+  /* Ensure content fits on paper */
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Adjust text colors for printing */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  span {
+    color: black !important;
+  }
+
+  /* Ensure page breaks don't occur in the middle of sections */
+  section {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Adjust links for printing */
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+  /* Ensure proper margins for printing */
+  @page {
+    margin: 1cm;
+  }
+}
