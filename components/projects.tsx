@@ -18,7 +18,7 @@ export default function Projects() {
       category: "ai",
       technologies: ["Artificial Neural Networks", "Spark", "Python", "Big Data"],
       demoLink: "#",
-      githubLink: "#",
+      githubLink: "https://github.com/riddhi-more/Prediction-of-Product-Prices-and-Sale-Time",
     },
     {
       id: 2,
