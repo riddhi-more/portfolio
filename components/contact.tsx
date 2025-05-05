@@ -7,7 +7,9 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Github, Mail, Send, Linkedin } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Github, Mail, MapPin, Send, Linkedin, Briefcase } from "lucide-react"
+import ContactMap from "./contact-map"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -58,24 +60,22 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
-            {/*
-            <p className="text-gray-300 mb-8">
-              Feel free to reach out if you&apos;re looking for a Production Support Analyst, Software Engineer, or
-              Cloud Specialist with hands-on experience in Agile projects. I&apos;m always open to discussing exciting
-              roles, innovative projects, or how I can contribute to your team&apos;s success.
-            </p>
+            {/*<h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
 
-            <div className="bg-purple-500/10 p-4 rounded-lg mb-8 border border-purple-500/20">
-              <h4 className="text-white font-medium mb-2">Open to Opportunities</h4>
-              <p className="text-gray-300">
-                I'm currently open to roles in Software Development, Cloud Engineering, or Agile Leadership. Feel free
-                to reach out to discuss how I can contribute to your team's success.
-              </p>
-            </div>
-            */}
+            <Card className="bg-gray-900/30 border-gray-800 mb-8">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Briefcase className="h-5 w-5 text-purple-500" />
+                  <h4 className="text-lg font-medium text-white">Open to Opportunities</h4>
+                </div>
+                <p className="text-gray-300">
+                  I'm currently open to roles in Software Development, Cloud Engineering, or Agile Leadership. Feel free
+                  to reach out to discuss how I can contribute to your team's success.
+                </p>
+              </CardContent>
+            </Card>*/}
 
-            <div className="space-y-6">
+            <div className="space-y-6 mb-8">
               <div className="flex items-start">
                 <div className="bg-purple-500/10 p-3 rounded-full mr-4">
                   <Mail className="h-6 w-6 text-purple-500" />
@@ -124,7 +124,19 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
+
+              <div className="flex items-start">
+                <div className="bg-purple-500/10 p-3 rounded-full mr-4">
+                  <MapPin className="h-6 w-6 text-purple-500" />
+                </div>
+                <div>
+                  <h4 className="text-white font-medium">Location</h4>
+                  <p className="text-gray-400">London, United Kingdom</p>
+                </div>
+              </div>
             </div>
+
+            <ContactMap />
           </motion.div>
 
           <motion.div
@@ -134,6 +146,7 @@ export default function Contact() {
             viewport={{ once: true }}
           >
           {/*
+            <h3 className="text-2xl font-bold text-white mb-6">Send Me a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input

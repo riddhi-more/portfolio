@@ -22,7 +22,11 @@ export default function Navbar() {
     { name: "Home", href: "/#home" },
     { name: "About", href: "/#about" },
     { name: "Skills", href: "/#skills" },
+    { name: "Timeline", href: "/#timeline" },
     { name: "Projects", href: "/#projects" },
+    { name: "Cloud", href: "/#cloud-projects" },
+    { name: "DevOps", href: "/#cicd" },
+    { name: "Terminal", href: "/#terminal" },
     { name: "Contact", href: "/#contact" },
     { name: "Resume", href: "/resume" },
   ]
@@ -39,9 +43,13 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
           {navItems.map((item) => (
-            <Link key={item.name} href={item.href} className="text-gray-300 hover:text-purple-500 transition-colors">
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-gray-300 hover:text-purple-500 transition-colors text-sm"
+            >
               {item.name}
             </Link>
           ))}

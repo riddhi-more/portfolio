@@ -9,6 +9,10 @@ import Projects from "@/components/projects"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import LoadingScreen from "@/components/loading-screen"
+import CareerTimeline from "@/components/career-timeline"
+import TerminalInterface from "@/components/terminal-interface"
+import CICDPipeline from "@/components/cicd-pipeline"
+import CloudProjects from "@/components/cloud-projects"
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
@@ -32,7 +36,11 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
+      <CareerTimeline />
       <Projects />
+      <CloudProjects />
+      <CICDPipeline />
+      <TerminalInterface />
       <Contact />
       <Footer />
     </main>
