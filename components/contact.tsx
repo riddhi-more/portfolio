@@ -59,6 +59,7 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
+            {/*
             <p className="text-gray-300 mb-8">
               Feel free to reach out if you&apos;re looking for a Production Support Analyst, Software Engineer, or
               Cloud Specialist with hands-on experience in Agile projects. I&apos;m always open to discussing exciting
@@ -72,6 +73,7 @@ export default function Contact() {
                 to reach out to discuss how I can contribute to your team's success.
               </p>
             </div>
+            */}
 
             <div className="space-y-6">
               <div className="flex items-start">
@@ -131,6 +133,7 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
           >
+          {/*
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
@@ -179,6 +182,7 @@ export default function Contact() {
                 <Send className="mr-2 h-4 w-4" /> Send Message
               </Button>
             </form>
+            */}
           </motion.div>
         </div>
       </div>
