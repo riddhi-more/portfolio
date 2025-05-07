@@ -13,6 +13,7 @@ import CareerTimeline from "@/components/career-timeline"
 import TerminalInterface from "@/components/terminal-interface"
 import CICDPipeline from "@/components/cicd-pipeline"
 import CloudProjects from "@/components/cloud-projects"
+import BackToTop from "@/components/back-to-top"
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
@@ -43,6 +44,7 @@ export default function Home() {
       <TerminalInterface />
       <Contact />
       <Footer />
+      <BackToTop />
     </main>
   )
 }

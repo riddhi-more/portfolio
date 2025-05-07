@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import Image from "next/image"
 import { ExternalLink, Github } from "lucide-react"
 
 export default function Projects() {
@@ -14,7 +13,6 @@ export default function Projects() {
       title: "Prediction of Product Prices and Sale Time",
       description:
         "Developed AI-powered predictions using Artificial Neural Networks (ANN) and big data technologies like Spark Python.",
-      image: "/placeholder.svg?height=400&width=600",
       category: "ai",
       technologies: ["Artificial Neural Networks", "Spark", "Python", "Big Data"],
       demoLink: "#",
@@ -24,7 +22,6 @@ export default function Projects() {
       id: 2,
       title: "'City Cloud' AWS Web Application",
       description: "Designed and deployed a micro-services-based application on AWS using Kubernetes.",
-      image: "/placeholder.svg?height=400&width=600",
       category: "cloud",
       technologies: ["AWS", "Kubernetes", "Route 53", "EC2", "RDS", "S3", "CloudFormation"],
       demoLink: "#",
@@ -35,7 +32,6 @@ export default function Projects() {
       title: "Real-time Monitoring System",
       description:
         "Built real-time monitoring and alerting pipelines using Prometheus, Grafana, and Splunk, reducing MTTR by 40%.",
-      image: "/placeholder.svg?height=400&width=600",
       category: "devops",
       technologies: ["Prometheus", "Grafana", "Splunk", "Python", "Alerting"],
       demoLink: "#",
@@ -45,7 +41,6 @@ export default function Projects() {
       id: 4,
       title: "Automated Operational Tasks",
       description: "Automated routine operational tasks with PowerShell, Python, Bash, and Perl scripting on Linux.",
-      image: "/placeholder.svg?height=400&width=600",
       category: "automation",
       technologies: ["PowerShell", "Python", "Bash", "Perl", "Linux"],
       demoLink: "#",
@@ -56,7 +51,6 @@ export default function Projects() {
       title: "CI/CD Workflow Management",
       description:
         "Managed CI/CD workflows using Jenkins and GitLab, ensuring seamless deployments across environments.",
-      image: "/placeholder.svg?height=400&width=600",
       category: "devops",
       technologies: ["Jenkins", "GitLab", "CI/CD", "Docker", "Kubernetes"],
       demoLink: "#",
@@ -66,7 +60,6 @@ export default function Projects() {
       id: 6,
       title: "Cloud-Native Application Solutions",
       description: "Engineered cloud-native application solutions, reducing infrastructure costs by 40%.",
-      image: "/placeholder.svg?height=400&width=600",
       category: "cloud",
       technologies: ["Azure", "AWS", "Microservices", "Containerization", "Kubernetes"],
       demoLink: "#",
@@ -75,6 +68,38 @@ export default function Projects() {
   ]
 
   const filteredProjects = filter === "all" ? projects : projects.filter((project) => project.category === filter)
+
+  // Function to get image based on category
+  const getProjectImage = (category: string) => {
+    switch (category) {
+      case "ai":
+        return "bg-gradient-to-br from-purple-600 to-blue-500"
+      case "cloud":
+        return "bg-gradient-to-br from-blue-500 to-cyan-400"
+      case "devops":
+        return "bg-gradient-to-br from-green-500 to-emerald-400"
+      case "automation":
+        return "bg-gradient-to-br from-orange-500 to-amber-400"
+      default:
+        return "bg-gradient-to-br from-gray-700 to-gray-600"
+    }
+  }
+
+  // Function to get icon based on category
+  const getProjectIcon = (category: string) => {
+    switch (category) {
+      case "ai":
+        return "🧠"
+      case "cloud":
+        return "☁️"
+      case "devops":
+        return "🔄"
+      case "automation":
+        return "⚙️"
+      default:
+        return "💻"
+    }
+  }
 
   return (
     <section id="projects" className="py-20 bg-black">
@@ -147,13 +172,15 @@ export default function Projects() {
               viewport={{ once: true }}
               className="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden hover:border-purple-500 transition-colors group"
             >
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+              <div className={`relative h-48 overflow-hidden ${getProjectImage(project.category)}`}>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-6xl">{getProjectIcon(project.category)}</span>
+                </div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-black/50 text-white px-3 py-1 rounded-full text-sm capitalize">
+                    {project.category}
+                  </span>
+                </div>
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                   <a
                     href={project.demoLink}

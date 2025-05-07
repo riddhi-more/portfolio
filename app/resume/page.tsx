@@ -8,6 +8,7 @@ import Footer from "@/components/footer"
 import ResumeSidebar from "@/components/resume-sidebar"
 import ResumeContent from "@/components/resume-content"
 import PrintableResume from "@/components/printable-resume"
+import BackToTop from "@/components/back-to-top"
 
 export default function ResumePage() {
   const searchParams = useSearchParams()
@@ -46,6 +47,7 @@ export default function ResumePage() {
         </div>
       </div>
       <Footer />
+      <BackToTop />
     </main>
   )
 }
