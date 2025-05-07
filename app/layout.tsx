@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import "./pdf-styles.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -24,6 +25,13 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
+        <Script id="scroll-to-top" strategy="afterInteractive">
+          {`
+            if (window.location.hash === '') {
+              window.scrollTo(0, 0);
+            }
+          `}
+        </Script>
       </body>
     </html>
   )
