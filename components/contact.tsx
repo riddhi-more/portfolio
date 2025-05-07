@@ -55,9 +55,8 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
+            className="mx-auto"
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {/* Left Column - Email, LinkedIn, GitHub */}
               <div className="space-y-6">

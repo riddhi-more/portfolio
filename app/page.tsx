@@ -19,10 +19,10 @@ export default function Home() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Simulate loading time
+    // Simulate loading time - reduced to 1 second for better UX
     const timer = setTimeout(() => {
       setLoading(false)
-    }, 2000)
+    }, 1000)
 
     return () => clearTimeout(timer)
   }, [])
@@ -32,7 +32,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background" id="home">
       <Navbar />
       <Hero />
       <About />

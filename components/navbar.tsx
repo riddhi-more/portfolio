@@ -8,10 +8,23 @@ import { motion } from "framer-motion"
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState("home")
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
+
+      // Update active section based on scroll position
+      const sections = document.querySelectorAll("section[id]")
+
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top
+        const sectionId = section.getAttribute("id") || ""
+
+        if (sectionTop < 100) {
+          setActiveSection(sectionId)
+        }
+      })
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -48,7 +61,11 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-gray-300 hover:text-purple-500 transition-colors text-sm"
+              className={`text-sm transition-colors ${
+                activeSection === item.href.split("#")[1]
+                  ? "text-purple-500 font-medium"
+                  : "text-gray-300 hover:text-purple-500"
+              }`}
             >
               {item.name}
             </Link>
@@ -74,7 +91,11 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-purple-500 py-2 transition-colors"
+                className={`py-2 transition-colors ${
+                  activeSection === item.href.split("#")[1]
+                    ? "text-purple-500 font-medium"
+                    : "text-gray-300 hover:text-purple-500"
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
