@@ -7,7 +7,7 @@ import TypewriterComponent from "typewriter-effect"
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-black pt-16">
+    <div className="relative min-h-screen flex items-center justify-center bg-black pt-16">
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
@@ -132,6 +132,6 @@ export default function Hero() {
           </svg>
         </a>
       </div>
-    </section>
+    </div>
   )
 }

@@ -21,17 +21,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script id="scroll-to-top" strategy="beforeInteractive">
+          {`
+            if (window.location.hash === '') {
+              window.history.scrollRestoration = 'manual';
+            }
+          `}
+        </Script>
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
-        <Script id="scroll-to-top" strategy="afterInteractive">
-          {`
-            if (window.location.hash === '') {
-              window.scrollTo(0, 0);
-            }
-          `}
-        </Script>
       </body>
     </html>
   )

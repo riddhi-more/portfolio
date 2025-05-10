@@ -24,6 +24,9 @@ export default function Home() {
       setLoading(false)
     }, 1000)
 
+    // Force scroll to top on initial load
+    window.scrollTo(0, 0)
+
     return () => clearTimeout(timer)
   }, [])
 
@@ -32,9 +35,11 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main id="top" className="min-h-screen bg-background">
       <Navbar />
-      <Hero />
+      <section id="home" className="min-h-screen">
+        <Hero />
+      </section>
       <About />
       <Skills />
       <CareerTimeline />

@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -51,14 +50,21 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="#home" className="text-2xl font-bold text-white">
+        <a
+          href="#home"
+          className="text-2xl font-bold text-white"
+          onClick={(e) => {
+            e.preventDefault()
+            window.scrollTo({ top: 0, behavior: "smooth" })
+          }}
+        >
           <span className="text-purple-500">Port</span>folio
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
           {navItems.map((item) => (
-            <Link
+            <a
               key={item.name}
               href={item.href}
               className={`text-sm transition-colors ${
@@ -68,7 +74,7 @@ export default function Navbar() {
               }`}
             >
               {item.name}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -88,7 +94,7 @@ export default function Navbar() {
         >
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.name}
                 href={item.href}
                 className={`py-2 transition-colors ${
@@ -99,7 +105,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </div>
         </motion.div>
